@@ -1,13 +1,11 @@
 # .circleci/config.yml
 
 version: 2
-
-orbs:
-  win: circleci/windows@2.3.0
-
+  
 jobs:
   build:
-    executor: win/default
+    macos:
+      xcode: "11.3"
     working_directory: /Users/distiller/project
     environment:
       FL_OUTPUT_DIR: output
