@@ -1,9 +1,14 @@
 version: 2.1
 
 workflows:
+  test-deploy:
+    jobs: 
+      - test
+
+jobs:
   test:
     docker:
       - image: cimg/android:2021.10.2
-    step:
+    steps:
       - checkout
       - run: android --version
