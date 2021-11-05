@@ -1,7 +1,9 @@
 version: 2.1
-orbs: 
-  welcome: circleci/welcome-orb@0.4.1
+
 workflows:
-  welcome:
-    jobs:
-      - welcome/run
+  test:
+    docker:
+      - image: cimg/android:2021.10.2
+    step:
+      - checkout
+      - run: android --version
