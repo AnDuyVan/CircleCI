@@ -8,7 +8,9 @@ workflows:
 jobs:
   test:
     docker:
-      - image: cimg/android:2021.10.2
+      - image: cirrusci/flutter
     steps:
       - checkout
-      - run: android list sdk
+      - run: flutter doctor
+      - run: flutter test 
+      - run: flutter -v build apk
