@@ -11,4 +11,4 @@ jobs:
       - image: cimg/android:2021.10.2
     steps:
       - checkout
-      - run: node --version
+      - run: android list sdk
