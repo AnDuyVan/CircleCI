@@ -11,5 +11,5 @@ jobs:
       - image: cirrusci/flutter
     steps:
       - checkout
+      - run: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
       - run: flutter doctor
-      - run: flutter -v build apk
