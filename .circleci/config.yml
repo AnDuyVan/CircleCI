@@ -6,6 +6,10 @@ jobs:
       - image: cirrusci/flutter
     steps:
       - checkout
+      - run:
+          command: |  # use pipenv to install dependencies
+            sudo pip install pipenv
+            pipenv install
       - run: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
       - run: cat  ${HOME}/gcloud-service-key.json
       - run: flutter doctor
